@@ -14,7 +14,6 @@ export const hotel = {
   phone: "(605) 598-4567",
   phoneHref: "tel:+16055984567",
   email: "700faulktoninn@gmail.com",
-  bookingUrl: "https://www.expedia.com/Faulkton-Hotels-Faulkton-Inn.h90348560.Hotel-Information",
-  expediaPropertyId: "90348560",
+  tripadvisorUrl: "https://www.tripadvisor.com/Hotel_Review-g54602-d3511437-Reviews-Faulkton_Inn-Faulkton_South_Dakota.html",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Faulkton+Inn+700+Main+Street+Faulkton+SD+57438",
 };

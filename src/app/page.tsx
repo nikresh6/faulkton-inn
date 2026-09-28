@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookingBar } from "@/components/BookingBar";
+import { CallPrompt } from "@/components/CallPrompt";
+import { HeroSlideshow } from "@/components/HeroSlideshow";
 import { RoomCard } from "@/components/RoomCard";
 import { Reveal } from "@/components/Reveal";
 import { hotel, rooms } from "@/lib/data";
@@ -13,14 +14,14 @@ const reviews = [
 
 export default function Home() { return <>
   <section className="hero">
-    <Image src="/images/faulkton-inn-exterior.jpg" alt="Exterior of Faulkton Inn at 700 Main Street" fill priority sizes="100vw" />
+    <HeroSlideshow />
     <div className="hero-shade"></div><div className="hero-grain"></div>
-    <div className="hero-copy shell"><p className="eyebrow light hero-kicker">Family-run hospitality · Faulkton, South Dakota</p><h1><span>Stay awhile.</span><br/>Feel at home.</h1><p>Comfortable rooms, a generous welcome, and an easy place to settle in — right at 700 Main Street.</p><div className="actions"><Link className="button button-cream" href="/booking">Plan your stay</Link><a className="button button-ghost" href={hotel.phoneHref}>Call the inn</a></div></div>
+    <div className="hero-copy shell"><p className="eyebrow light hero-kicker">Family-run hospitality · Faulkton, South Dakota</p><h1><span>Stay awhile.</span><br/>Feel at home.</h1><p>Comfortable rooms, a generous welcome, and an easy place to settle in — right at 700 Main Street.</p><div className="actions"><CallPrompt label="Plan your stay" className="button button-cream" /><a className="button button-ghost" href={hotel.phoneHref}>Call the inn</a></div></div>
     <div className="hero-meta"><span>45.03° N</span><span>99.12° W</span><span className="hero-scroll">Scroll to discover ↓</span></div>
-    <p className="photo-credit">Faulkton Area Economic Development</p>
+    <p className="photo-credit">Faulkton Inn · 700 Main Street</p>
   </section>
 
-  <div className="booking-wrap shell"><BookingBar /></div>
+  <div className="booking-wrap shell"><div className="availability-strip"><div><p className="eyebrow">Direct reservations</p><strong>Ready when you are.</strong></div><p>Call the inn for current room rates, availability, and a personal welcome.</p><CallPrompt label="Call for availability" className="button" /></div></div>
 
   <section className="intro-section shell">
     <Reveal className="intro-title"><p className="eyebrow">The heart of the Carousel City</p><h2>A small inn with<br/>a big welcome.</h2></Reveal>
@@ -54,9 +55,9 @@ export default function Home() { return <>
   <section className="reviews-section shell">
     <Reveal className="reviews-intro"><div><p className="eyebrow">Guest notes</p><h2>Kind words,<br/>warm stays.</h2></div><div className="rating-lockup"><strong>4.8</strong><span>★★★★★<small>12 Tripadvisor reviews</small></span></div></Reveal>
     <div className="reviews-grid">{reviews.map((review,i)=><Reveal className="review-card" delay={i*100} key={review.name}><div className="quote-mark">“</div><blockquote>{review.quote}</blockquote><p>{review.name}<span>{review.date} · Tripadvisor</span></p></Reveal>)}</div>
-    <p className="review-disclaimer">Traveler reviews are subjective opinions published on Tripadvisor. Rating and review count checked September 2026.</p>
+    <div className="review-footer"><p className="review-disclaimer">Traveler reviews are subjective opinions published on Tripadvisor. Rating and review count checked September 2026.</p><a className="text-link" href={hotel.tripadvisorUrl} target="_blank" rel="noreferrer">View all Tripadvisor reviews <span>↗</span></a></div>
   </section>
 
   <section className="contact-band shell"><Reveal><p className="eyebrow">Find your way here</p><h2>Right on Main Street.</h2><p>{hotel.address}</p></Reveal><Reveal className="contact-actions" delay={120}><a className="button" href={hotel.mapsUrl} target="_blank" rel="noreferrer">Get directions</a><a className="text-link" href={hotel.phoneHref}>{hotel.phone}</a></Reveal></section>
-  <section className="final-cta"><div className="final-cta-bg"><Image src="/images/faulkton-inn-exterior.jpg" alt="" fill sizes="100vw"/></div><div className="final-cta-shade"></div><Reveal className="final-cta-inner"><p className="eyebrow light">Your room is waiting</p><h2>Ready to settle in?</h2><p>Check current availability online, or call us directly.</p><div className="actions"><Link className="button button-cream" href="/booking">Check availability</Link><a className="button button-ghost" href={hotel.phoneHref}>Call {hotel.phone}</a></div></Reveal></section>
+  <section className="final-cta"><div className="final-cta-bg"><Image src="/images/faulkton-inn-exterior.jpg" alt="" fill sizes="100vw"/></div><div className="final-cta-shade"></div><Reveal className="final-cta-inner"><p className="eyebrow light">Your room is waiting</p><h2>Ready to settle in?</h2><p>Call us directly for current rates and room availability.</p><div className="actions"><CallPrompt label="Call for availability" className="button button-cream" /><a className="button button-ghost" href={hotel.phoneHref}>{hotel.phone}</a></div></Reveal></section>
 </>; }

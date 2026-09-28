@@ -1,3 +1,5 @@
-import type { Metadata } from "next";import { BookingBar } from "@/components/BookingBar";import { hotel } from "@/lib/data";
-export const metadata:Metadata={title:"Check Availability"};
-export default function Booking(){return <section className="booking-page shell"><div className="booking-card"><p className="eyebrow">Plan your stay</p><h1>Check availability.</h1><p>Choose your dates and guests. You&apos;ll continue to the inn&apos;s current external booking partner to see up-to-date rates and availability.</p><BookingBar compact/><p className="notice">You&apos;re continuing to an external booking partner. Prefer to book by phone? Call <a href={hotel.phoneHref}><strong>{hotel.phone}</strong></a>.</p></div></section>}
+import { redirect } from "next/navigation";
+
+export default function Booking() {
+  redirect("/");
+}

@@ -12,25 +12,25 @@ pnpm typecheck
 pnpm build
 ```
 
-The site works without credentials using typed local fixtures. Copy `.env.example` to `.env.local` to configure a canonical site URL or future content/booking integrations.
+The site works without credentials using typed local fixtures. Copy `.env.example` to `.env.local` to configure a canonical site URL or future content integrations.
 
-## Booking modes
+## Reservations
 
-The first release uses a redirect provider: the availability form validates and preserves guest intent, then clearly hands off to the current Expedia property page. It never treats the website or a CMS as the inventory source of truth. Replace this handoff with a documented PMS or booking-engine adapter after the inn confirms its system.
+Reservations, rates, and current availability are confirmed directly by phone. Availability calls to action open an accessible call prompt and never imply live online inventory.
 
 ## Content and photos
 
-Room names and configurations are provisional OTA-derived fixtures. Owner-edited display names can be changed independently of future provider IDs in `src/lib/data.ts`. Room photography intentionally uses labeled placeholders until approved property photos are supplied. The exterior photo comes from Faulkton Area Economic Development.
+Room names and configurations are working fixtures pending owner confirmation. Approved display names can be updated in `src/lib/data.ts`. Property and destination photography is stored locally with the site.
 
 ## Production checklist
 
 - Obtain owner approval for room names, bed layouts, occupancies, story copy, amenities, and all policies.
-- Confirm the authoritative booking engine and update the booking adapter.
+- Replace “Call for current rate” labels only after the inn supplies approved typical rates.
 - Replace room placeholders with approved, optimized property photography.
 - Reconstruct the logo from original straight-on sign photos; the included SVG is a provisional mark derived from the public exterior photo and documented colors.
 - Set `NEXT_PUBLIC_SITE_URL` to the custom production domain.
 - Confirm accessibility features at the property and update room data.
-- Test phone, email, directions, booking handoff, sitemap, canonical metadata, and mobile layouts.
+- Test phone, email, directions, call prompts, sitemap, canonical metadata, and mobile layouts.
 - Add the final domain in Vercel, configure apex/`www` redirects, and verify HTTPS.
 - Submit the sitemap to Google Search Console and update the Google Business Profile website URL.
 
