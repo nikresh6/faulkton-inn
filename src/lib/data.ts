@@ -1,11 +1,11 @@
 export type Room = { slug: string; name: string; shortName: string; summary: string; occupancy: number; beds: string; tone: string; image: string; imageAlt: string };
 
 export const rooms: Room[] = [
-  { slug: "business-single-room", name: "Business Single Room", shortName: "Queen Room", summary: "A practical room for solo travelers or couples.", occupancy: 3, beds: "1 queen bed", tone: "room-sage", image: "/images/inn-room.jpg", imageAlt: "Guest room at Faulkton Inn with work area and in-room conveniences" },
-  { slug: "double-room", name: "Basic Double Room", shortName: "Two Double Beds", summary: "A flexible option for travelers who need two beds.", occupancy: 4, beds: "2 double beds", tone: "room-rust", image: "/images/inn-family-suite.jpg", imageAlt: "Spacious multi-bed guest room at Faulkton Inn" },
-  { slug: "two-queen-room", name: "Basic Room", shortName: "Two Queen Beds", summary: "Two queen beds for families, friends, or longer stays.", occupancy: 4, beds: "2 queen beds", tone: "room-gold", image: "/images/inn-family-suite.jpg", imageAlt: "Two queen bed room at Faulkton Inn" },
-  { slug: "family-studio-suite", name: "Comfort Studio Suite", shortName: "Family Studio Suite", summary: "Extra sleeping capacity for families and groups.", occupancy: 7, beds: "2 queen beds + 2 sofa beds", tone: "room-blue", image: "/images/inn-family-suite.jpg", imageAlt: "Family suite at Faulkton Inn with multiple sleeping areas" },
-  { slug: "triple-room", name: "Business Triple Room", shortName: "Triple Room", summary: "A multi-bed layout for larger parties.", occupancy: 6, beds: "1 queen + 2 twin beds", tone: "room-plum", image: "/images/inn-family-suite.jpg", imageAlt: "Multi-bed guest room for larger parties at Faulkton Inn" },
+  { slug: "business-single-room", name: "Business Single Room", shortName: "Business Single Room", summary: "One queen bed with room for up to three guests.", occupancy: 3, beds: "1 queen bed", tone: "room-sage", image: "/images/inn-room.jpg", imageAlt: "Guest room at Faulkton Inn" },
+  { slug: "double-room", name: "Basic Double Room", shortName: "Basic Double Room", summary: "Two double beds with room for up to four guests.", occupancy: 4, beds: "2 double beds", tone: "room-rust", image: "/images/inn-family-suite.jpg", imageAlt: "Guest room at Faulkton Inn" },
+  { slug: "two-queen-room", name: "Basic Room", shortName: "Basic Room", summary: "Two queen beds with room for up to four guests.", occupancy: 4, beds: "2 queen beds", tone: "room-gold", image: "/images/inn-family-suite.jpg", imageAlt: "Guest room at Faulkton Inn" },
+  { slug: "family-studio-suite", name: "Comfort Studio Suite", shortName: "Comfort Studio Suite", summary: "A roomy setup for families and groups of up to seven.", occupancy: 7, beds: "2 queen beds, 1 double sofa bed, 1 twin sofa bed", tone: "room-blue", image: "/images/inn-family-suite.jpg", imageAlt: "Family suite at Faulkton Inn" },
+  { slug: "triple-room", name: "Business Triple Room", shortName: "Business Triple Room", summary: "Three beds with room for up to six guests.", occupancy: 6, beds: "1 queen bed, 1 twin bed, 1 large twin bed", tone: "room-plum", image: "/images/inn-family-suite.jpg", imageAlt: "Guest room at Faulkton Inn" },
 ];
 
 export const hotel = {

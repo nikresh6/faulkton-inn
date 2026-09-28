@@ -16,7 +16,7 @@ export default function Home() { return <>
   <section className="hero">
     <HeroSlideshow />
     <div className="hero-shade"></div><div className="hero-grain"></div>
-    <div className="hero-copy shell"><p className="eyebrow light hero-kicker">Family-run hospitality · Faulkton, South Dakota</p><h1><span>Stay awhile.</span><br/>Feel at home.</h1><p>Comfortable rooms, a generous welcome, and an easy place to settle in — right at 700 Main Street.</p><div className="actions"><CallPrompt label="Plan your stay" className="button button-cream" /><a className="button button-ghost" href={hotel.phoneHref}>Call the inn</a></div></div>
+    <div className="hero-copy shell"><p className="eyebrow light hero-kicker">Family-run hospitality · Faulkton, South Dakota</p><h1><span>Stay awhile.</span><br/>Feel at home.</h1><p>Comfortable rooms, a warm welcome, and an easy place to settle in at 700 Main Street.</p><div className="actions"><CallPrompt label="Plan your stay" className="button button-cream" /><a className="button button-ghost" href={hotel.phoneHref}>Call the inn</a></div></div>
     <div className="hero-meta"><span>45.03° N</span><span>99.12° W</span><span className="hero-scroll">Scroll to discover ↓</span></div>
     <p className="photo-credit">Faulkton Inn · 700 Main Street</p>
   </section>
@@ -25,7 +25,7 @@ export default function Home() { return <>
 
   <section className="intro-section shell">
     <Reveal className="intro-title"><p className="eyebrow">The heart of the Carousel City</p><h2>A small inn with<br/>a big welcome.</h2></Reveal>
-    <Reveal className="intro-copy" delay={120}><p>Faulkton Inn is an independent, family-run stay made for the way people really travel: road trips, family weekends, work in town, community celebrations, and the moments in between.</p><div className="signature-line"><i></i><span>Rebekah &amp; José Epp<br/><small>Your hosts</small></span></div></Reveal>
+    <Reveal className="intro-copy" delay={120}><p>People come to Faulkton for all kinds of reasons: a family weekend, a job in town, a community celebration, or simply a good night&apos;s rest along the way. Whatever brings you here, we want you to feel at home.</p><div className="signature-line"><i></i><span>Rebekah &amp; José Epp<br/><small>Your hosts</small></span></div></Reveal>
   </section>
 
   <section className="editorial-gallery shell" aria-label="Faulkton Inn gallery">
@@ -35,7 +35,7 @@ export default function Home() { return <>
   </section>
 
   <section className="rooms-section">
-    <div className="shell"><Reveal className="section-head"><div><p className="eyebrow">Rest easy</p><h2>Room for the way<br/>you travel.</h2></div><div><p>Choose a practical queen room, two-bed setup, or the flexible family suite. Every stay begins with the same thing: a warm Faulkton welcome.</p><Link className="text-link" href="/rooms">Explore every room <span>↗</span></Link></div></Reveal><div className="room-grid">{rooms.slice(0,3).map((room,i)=><Reveal key={room.slug} delay={i*110}><RoomCard room={room} index={i}/></Reveal>)}</div></div>
+    <div className="shell"><Reveal className="section-head"><div><p className="eyebrow">Rest easy</p><h2>Room for the way<br/>you travel.</h2></div><div><p>Five room layouts give solo travelers, families, and groups a comfortable place to land. Call us and we&apos;ll help you find the right fit.</p><Link className="text-link" href="/rooms">Explore every room <span>↗</span></Link></div></Reveal><div className="room-grid">{rooms.slice(0,3).map((room,i)=><Reveal key={room.slug} delay={i*110}><RoomCard room={room} index={i}/></Reveal>)}</div></div>
   </section>
 
   <section className="story-section">
@@ -43,13 +43,13 @@ export default function Home() { return <>
   </section>
 
   <section className="amenities-home shell">
-    <Reveal><p className="eyebrow">Simple comforts</p><h2>The essentials,<br/>thoughtfully kept.</h2><p className="amenities-lead">No overpromising. Just the useful things that make a stay easier.</p></Reveal>
+    <Reveal><p className="eyebrow">Simple comforts</p><h2>The comforts<br/>that matter.</h2><p className="amenities-lead">The useful things you want after a day on the road, all taken care of.</p></Reveal>
     <div className="amenity-list"><Reveal delay={80}><span>01</span><h3>Free Wi-Fi</h3><p>Stay connected during your visit.</p></Reveal><Reveal delay={140}><span>02</span><h3>Free parking</h3><p>Convenient on-site self-parking.</p></Reveal><Reveal delay={200}><span>03</span><h3>EV charging</h3><p>Charge while you recharge.</p></Reveal><Reveal delay={260}><span>04</span><h3>Outdoor grill</h3><p>A relaxed place to gather outside.</p></Reveal></div>
   </section>
 
   <section className="local-feature">
     <Reveal className="local-images"><div className="local-img-main"><Image src="/images/faulkton-carousel.jpg" alt="Faulkton's historic carousel pavilion" fill sizes="55vw"/></div><div className="local-img-float"><Image src="/images/pickler-mansion.jpg" alt="Historic interior at Pickler Mansion" fill sizes="28vw"/></div><span className="local-number">1925</span></Reveal>
-    <Reveal className="local-copy" delay={120}><p className="eyebrow light">Beyond your room</p><h2>Discover the<br/>Carousel City.</h2><p>Walk into the story of Faulkton — its landmark carousel, colorful murals, historic homes, green spaces, and a downtown where people still know one another.</p><Link className="button button-cream" href="/faulkton">Explore Faulkton</Link></Reveal>
+    <Reveal className="local-copy" delay={120}><p className="eyebrow light">Beyond your room</p><h2>Discover the<br/>Carousel City.</h2><p>Get to know Faulkton through its landmark carousel, colorful murals, historic homes, green spaces, and a downtown where people still know one another.</p><Link className="button button-cream" href="/faulkton">Explore Faulkton</Link></Reveal>
   </section>
 
   <section className="reviews-section shell">
