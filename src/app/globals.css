@@ -49,3 +49,127 @@
 .roadtrip-image>a{position:absolute;z-index:2;left:10px;bottom:8px;font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.76);text-shadow:0 1px 5px #000}
 
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero-slide{opacity:0}.hero-slide:first-child{opacity:1;transform:none}.hero-slide-progress{display:none}}
+
+/* Responsive refinement */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overscroll-behavior-x:none}
+body{min-width:280px}
+img{display:block}
+.site-header{position:sticky;top:0}
+.availability-strip>*,.intro-section>*,.section-head>*,.story-card>*,.amenities-home>*,.amenities-intro>*,.amenities-editorial>*,.stay-details-heading>*,.local-feature>*,.reviews-intro>*,.content-grid>*,.room-detail-grid>*,.destination-intro>*,.landmark-feature>*,.dining-heading>*,.nearby-heading>*,.outdoors-section>*,.roadtrip-heading>*{min-width:0}
+.footer a,.prose a,.dining-card a{overflow-wrap:anywhere}
+
+/* Increase contrast while preserving the warm copper palette. */
+:root{--rust:#a84b29}
+
+@media(max-width:1050px){
+  .mobile-menu summary{justify-items:end}
+  .mobile-menu summary span{width:28px;transition:transform .25s ease,opacity .2s ease}
+  .mobile-menu[open] summary span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .mobile-menu[open] summary span:nth-child(2){opacity:0}
+  .mobile-menu[open] summary span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobile-menu nav{box-shadow:0 20px 40px rgba(7,24,35,.12)}
+  .mobile-menu nav>a,.mobile-menu nav>.mobile-menu-call{display:flex;align-items:center;min-height:48px}
+}
+
+@media(max-width:720px){
+  .site-header{height:72px}
+  .header-inner{gap:18px}
+  .brand{width:174px;height:35px}
+  .mobile-menu nav{top:72px;height:calc(100dvh - 72px);padding:12px 24px calc(92px + env(safe-area-inset-bottom));gap:0;overflow-y:auto;align-content:start;background:var(--paper)}
+  .mobile-menu nav>a{font:400 24px/1.1 var(--serif);color:var(--navy);border-bottom:1px solid var(--line);min-height:62px}
+  .mobile-menu nav>.mobile-menu-call{min-height:58px;margin-top:10px;color:var(--rust);font-size:10px}
+  .hero{height:calc(100svh - 72px);min-height:620px}
+  .hero-copy{padding-bottom:104px}
+  .hero h1{font-size:clamp(51px,15vw,58px)}
+  .hero-copy>p:not(.eyebrow){line-height:1.55}
+  .photo-credit{max-width:58%;text-align:right;line-height:1.3}
+  .button{min-height:50px}
+  .text-link{min-height:44px;align-items:center}
+  .mobile-sticky{left:auto;right:12px;bottom:max(10px,env(safe-area-inset-bottom));width:auto;min-width:132px;height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.26);box-shadow:0 9px 28px rgba(0,0,0,.28)}
+  .mobile-sticky:before{content:"☎";font-size:14px;margin-right:9px}
+  .call-dialog{width:min(100% - 28px,430px);max-height:calc(100dvh - 28px);padding:54px 24px 36px;overflow-y:auto}
+  .call-dialog-close{width:44px;height:44px;right:8px;top:6px}
+  .call-dialog h2{font-size:clamp(40px,13vw,48px)}
+  .call-dialog-number{font-size:clamp(25px,8vw,31px)}
+  .availability-strip strong{font-size:27px}
+  .availability-strip>p{font-size:16px}
+  .intro-section,.amenities-home,.reviews-section{padding-top:84px;padding-bottom:84px}
+  .rooms-section,.story-section,.dining-section,.nearby-section,.outdoors-section,.roadtrip-section,.stay-details-section{padding-top:84px;padding-bottom:84px}
+  .amenities-intro,.destination-intro{padding-top:80px}
+  .section-head{margin-bottom:48px}
+  .room-card-body{padding:24px 22px 28px}
+  .story-photo{height:min(125vw,470px)}
+  .story-stamp{width:106px;height:106px;font-size:16px;bottom:28px}
+  .amenities-photo{min-height:min(118vw,440px)}
+  .amenities-expanded-list>div{grid-template-columns:36px 1fr;gap:12px;padding:22px 0}
+  .amenities-expanded-list h3{font-size:27px}
+  .amenities-faq summary{min-height:48px;padding:9px 8px 9px 0;line-height:1.2}
+  .amenities-faq p{margin-left:0}
+  .stay-links{gap:18px 28px}
+  .review-card{padding-block:34px}
+  .review-card blockquote{margin-bottom:30px}
+  .contact-actions{width:100%;gap:12px}
+  .contact-actions .button{width:100%}
+  .final-cta .actions{width:100%;max-width:340px;display:grid;grid-template-columns:1fr}
+  .final-cta .button{width:100%}
+  .footer{padding-top:64px}
+  .footer-main{gap:38px;padding-bottom:50px}
+  .footer-main>div:not(:first-child) a{display:flex;align-items:center;min-height:40px;margin:0}
+  .footer-base{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+  .page-hero{height:min(68svh,520px);min-height:470px}
+  .page-hero-inner{padding-bottom:44px}
+  .page-hero h1{font-size:clamp(49px,14.5vw,57px);overflow-wrap:normal}
+  .page-hero-inner>p:not(.eyebrow){font-size:15px;line-height:1.55}
+  .content-section{padding-block:76px}
+  .lead-copy{font-size:21px!important}
+  .pull-quote{font-size:27px;margin-block:38px;padding-left:22px}
+  .room-detail{padding-top:62px}
+  .room-detail h1{font-size:clamp(49px,14vw,57px);margin-bottom:34px}
+  .room-detail-hero{height:min(118vw,440px)}
+  .room-detail-gallery{height:min(58vw,230px);gap:10px;margin-top:10px}
+  .room-copy{padding-top:58px}
+  .room-facts{padding:28px 24px}
+  .landmark-image{height:min(95vw,380px)}
+  .landmark-card-image{height:min(92vw,370px)}
+  .roadtrip-card{min-height:0}
+  .roadtrip-card .text-link{margin-top:26px}
+  .local-plan>div{padding-inline:22px}
+}
+
+@media(max-width:420px){
+  .shell,.header-inner{width:calc(100% - 28px)}
+  .brand{width:160px;height:32px}
+  .hero{min-height:600px}
+  .hero-copy{padding-bottom:98px}
+  .hero .actions{display:grid;grid-template-columns:1fr;width:100%;max-width:300px;gap:9px;margin-top:26px}
+  .hero .actions .button{width:100%}
+  .hero-meta{font-size:8px}
+  .hero-scroll{max-width:150px;text-align:right}
+  .availability-strip{width:calc(100% - 28px)}
+  .intro-title h2,.section-head h2,.amenities-home h2,.reviews-intro h2,.contact-band h2,.about-closing h2,.destination-intro h2,.amenities-intro h2,.stay-details-heading h2,.amenities-call h2{font-size:45px}
+  .story-card h2,.local-copy h2,.dining-heading h2,.nearby-heading h2,.outdoors-section h2,.roadtrip-heading h2{font-size:47px}
+  .final-cta h2{font-size:50px}
+  .editorial-gallery{height:520px}
+  .gallery-main{height:350px}
+  .gallery-side{top:305px;height:215px}
+  .room-visual,.rooms-all .room-visual{height:330px}
+  .local-images{min-height:430px}
+  .local-copy{padding:68px 22px}
+  .local-number{font-size:68px}
+  .rating-lockup strong{font-size:56px}
+  .review-card blockquote{font-size:23px}
+  .page-hero{min-height:455px}
+  .content-grid h2{font-size:43px}
+  .about-gallery{height:500px}
+  .room-detail-gallery{height:180px}
+  .room-facts dl{gap:24px 16px}
+  .landmark-copy{padding:34px 22px 40px}
+  .landmark-copy h3{font-size:36px}
+  .landmark-card h3{font-size:32px}
+  .things-images{height:310px}
+}
+
+@media(hover:none){
+  .button:hover,.text-link:hover{transform:none}
+  .room-card:hover .room-visual img,.editorial-gallery .reveal:hover img,.landmark-feature:hover img,.landmark-card:hover img,.roadtrip-card:hover .roadtrip-image img{transform:none}
+}

@@ -8,7 +8,7 @@ const slides = [
 
 export function HeroSlideshow() {
   return (
-    <div className="hero-slideshow" aria-label="A look inside Faulkton Inn">
+    <div className="hero-slideshow" role="group" aria-label="A look inside Faulkton Inn">
       {slides.map((slide, index) => (
         <div className={`hero-slide hero-slide-${index + 1}`} key={slide.src}>
           <Image src={slide.src} alt={slide.alt} fill loading={index === 0 ? "eager" : "lazy"} sizes="100vw" />

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CallPrompt } from "@/components/CallPrompt";
@@ -13,7 +13,14 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Faulkton Inn", description: "Stay in the heart of Faulkton.", images: ["/images/faulkton-inn-exterior.jpg"] },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#071823",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const structuredData = { "@context": "https://schema.org", "@type": "Hotel", name: "Faulkton Inn", telephone: "+1-605-598-4567", email: "700faulktoninn@gmail.com", address: { "@type": "PostalAddress", streetAddress: "700 Main Street", addressLocality: "Faulkton", addressRegion: "SD", postalCode: "57438", addressCountry: "US" }, image: "/images/faulkton-inn-exterior.jpg" };
-  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main">{children}</main><Footer /><CallPrompt label="Call for availability" className="mobile-sticky" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /></body></html>;
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a><Header /><main id="main">{children}</main><Footer /><CallPrompt label="Call the inn" className="mobile-sticky" /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /></body></html>;
 }
