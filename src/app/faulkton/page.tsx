@@ -22,10 +22,10 @@ const nearby = [
 ];
 
 const roadTrips = [
-  { place: "Aberdeen", distance: "63 miles", time: "about 1½ hours", detail: "Museums, shopping, dining, and the closest larger regional center.", url: "https://visitaberdeensd.com/" },
-  { place: "Pierre", distance: "100 miles", time: "about 2 hours", detail: "Visit the State Capitol, the Trail of Governors, and the Missouri River.", url: "https://www.travelsouthdakota.com/city/pierre" },
-  { place: "Badlands National Park", distance: "about 218 miles", time: "about 4 hours", detail: "A dramatic western South Dakota drive with overlooks, trails, and wildlife.", url: "https://www.nps.gov/badl/index.htm" },
-  { place: "Mount Rushmore", distance: "about 314 miles", time: "about 6 hours", detail: "An iconic Black Hills stop best planned as part of a longer road trip.", url: "https://www.nps.gov/moru/index.htm" },
+  { place: "Aberdeen", distance: "63 miles", time: "about 1½ hours", detail: "Museums, shopping, dining, and the closest larger regional center.", url: "https://visitaberdeensd.com/", image: "/images/aberdeen.jpg", alt: "Storybook Land in Aberdeen, South Dakota", credit: "Library of Congress", creditUrl: "https://commons.wikimedia.org/wiki/File:Storybook_Land_Park,_Aberdeen,_South_Dakota_LCCN2017708925.tif" },
+  { place: "Pierre", distance: "100 miles", time: "about 2 hours", detail: "Visit the State Capitol, the Trail of Governors, and the Missouri River.", url: "https://www.travelsouthdakota.com/city/pierre", image: "/images/pierre.jpg", alt: "South Dakota State Capitol in Pierre", credit: "Warren LeMay", creditUrl: "https://commons.wikimedia.org/wiki/File:South_Dakota_State_Capitol,_Capitol_Avenue,_Pierre,_SD_-_53748194705.jpg" },
+  { place: "Badlands National Park", distance: "about 218 miles", time: "about 4 hours", detail: "A dramatic western South Dakota drive with overlooks, trails, and wildlife.", url: "https://www.nps.gov/badl/index.htm", image: "/images/badlands.jpg", alt: "Rock formations and prairie in Badlands National Park", credit: "NPS", creditUrl: "https://commons.wikimedia.org/wiki/File:Panoramic_view_of_badland_formations_from_Cedar_Pass_Lodge,_Badlands_National_Park,_2009.jpg" },
+  { place: "Mount Rushmore", distance: "about 314 miles", time: "about 6 hours", detail: "An iconic Black Hills stop best planned as part of a longer road trip.", url: "https://www.nps.gov/moru/index.htm", image: "/images/mount-rushmore.jpg", alt: "Mount Rushmore National Memorial", credit: "Dean Franklin", creditUrl: "https://commons.wikimedia.org/wiki/File:Dean_Franklin_-_06.04.03_Mount_Rushmore_Monument_(by-sa).jpg" },
 ];
 
 export default function Faulkton() {
@@ -67,7 +67,7 @@ export default function Faulkton() {
     </section>
 
     <section className="outdoors-section shell">
-      <Reveal><p className="eyebrow">Things to do</p><h2>Make a day of it.</h2></Reveal>
+      <Reveal className="things-heading"><p className="eyebrow">Things to do</p><h2>Make a day of it.</h2><div className="things-images"><div><Image src="/images/faulkton-mural.jpg" alt="Faulkton elevator mural" fill sizes="32vw" /></div><div><Image src="/images/faulkton-carousel.jpg" alt="Faulkton city carousel" fill sizes="22vw" /></div></div></Reveal>
       <div className="outdoors-list">
         <Reveal delay={60}><span>01</span><div><h3>Walk the murals</h3><p>Start with the 110-foot elevator mural, then look for smaller works throughout town.</p></div></Reveal>
         <Reveal delay={100}><span>02</span><div><h3>Ride the carousel</h3><p>The restored 1925 carousel runs from Memorial Day through Labor Day, with posted seasonal hours.</p></div></Reveal>
@@ -80,7 +80,7 @@ export default function Faulkton() {
 
     <section className="roadtrip-section"><div className="shell">
       <Reveal className="roadtrip-heading"><p className="eyebrow light">From Faulkton</p><h2>Worth the drive.</h2><p>Use Faulkton as a quiet stop on a longer South Dakota trip. Distances and times are approximate and can change with your route and road conditions.</p></Reveal>
-      <div className="roadtrip-grid">{roadTrips.map((trip, index) => <Reveal className="roadtrip-card" delay={index * 70} key={trip.place}><span>0{index + 1}</span><h3>{trip.place}</h3><strong>{trip.distance} · {trip.time}</strong><p>{trip.detail}</p><a className="text-link light-link" href={trip.url} target="_blank" rel="noreferrer">Plan the trip <span>↗</span></a></Reveal>)}</div>
+      <div className="roadtrip-grid">{roadTrips.map((trip, index) => <Reveal className="roadtrip-card" delay={index * 70} key={trip.place}><div className="roadtrip-image"><Image src={trip.image} alt={trip.alt} fill sizes="(max-width: 720px) 100vw, 25vw" /><a href={trip.creditUrl} target="_blank" rel="noreferrer">Photo: {trip.credit}</a></div><span>0{index + 1}</span><h3>{trip.place}</h3><strong>{trip.distance} · {trip.time}</strong><p>{trip.detail}</p><a className="text-link light-link" href={trip.url} target="_blank" rel="noreferrer">Plan the trip <span>↗</span></a></Reveal>)}</div>
     </div></section>
 
     <section className="local-plan shell"><Reveal><p className="eyebrow">Before you go</p><h2>Ask a local.</h2><p>Seasonal hours are common in a small town. Check with the business or attraction before making a special trip. You can also ask us at the inn. We are glad to point you in the right direction.</p><a className="button" href="https://www.faulktonsd.com/tourism" target="_blank" rel="noreferrer">Visit Faulkton tourism</a></Reveal></section>
