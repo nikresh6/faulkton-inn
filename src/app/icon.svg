@@ -1,3 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <text x="4" y="54" fill="#c65c31" font-family="Snell Roundhand, Brush Script MT, cursive" font-size="62" font-style="italic" font-weight="600">F</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Faulkton Inn">
+  <rect width="64" height="64" rx="14" fill="#f0e9dd"/>
+  <text x="31" y="48"
+        text-anchor="middle"
+        font-family="Snell Roundhand, Apple Chancery, Brush Script MT, Segoe Script, cursive"
+        font-size="48"
+        font-style="italic"
+        font-weight="600"
+        fill="#071823">F</text>
 </svg>
