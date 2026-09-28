@@ -4,7 +4,6 @@ const slides = [
   { src: "/images/faulkton-inn-exterior.jpg", alt: "Faulkton Inn on Main Street at dusk" },
   { src: "/images/inn-family-suite.jpg", alt: "Spacious family suite at Faulkton Inn" },
   { src: "/images/inn-room.jpg", alt: "Comfortable guest room at Faulkton Inn" },
-  { src: "/images/inn-bathroom.jpg", alt: "Fresh guest bathroom at Faulkton Inn" },
 ];
 
 export function HeroSlideshow() {
