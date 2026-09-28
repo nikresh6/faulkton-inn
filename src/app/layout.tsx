@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://faulkton-inn.vercel.app"),
   title: { default: "Faulkton Inn | Faulkton, South Dakota", template: "%s | Faulkton Inn" },
   description: "A warm, family-run stay at 700 Main Street in Faulkton, South Dakota.",
+  icons: { icon: [{ url: "/icon.svg?v=3", type: "image/svg+xml" }] },
   openGraph: { title: "Faulkton Inn", description: "Stay in the heart of Faulkton.", images: ["/images/faulkton-inn-exterior.jpg"] },
   twitter: { card: "summary_large_image", title: "Faulkton Inn", description: "Stay in the heart of Faulkton.", images: ["/images/faulkton-inn-exterior.jpg"] },
 };
