@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Faulkton Inn
 
-## Getting Started
+Production-ready marketing site for Faulkton Inn, a family-run hotel at 700 Main Street in Faulkton, South Dakota.
 
-First, run the development server:
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
+pnpm lint
+pnpm typecheck
+pnpm build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site works without credentials using typed local fixtures. Copy `.env.example` to `.env.local` to configure a canonical site URL or future content/booking integrations.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Booking modes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The first release uses a redirect provider: the availability form validates and preserves guest intent, then clearly hands off to the current Expedia property page. It never treats the website or a CMS as the inventory source of truth. Replace this handoff with a documented PMS or booking-engine adapter after the inn confirms its system.
 
-## Learn More
+## Content and photos
 
-To learn more about Next.js, take a look at the following resources:
+Room names and configurations are provisional OTA-derived fixtures. Owner-edited display names can be changed independently of future provider IDs in `src/lib/data.ts`. Room photography intentionally uses labeled placeholders until approved property photos are supplied. The exterior photo comes from Faulkton Area Economic Development.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production checklist
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Obtain owner approval for room names, bed layouts, occupancies, story copy, amenities, and all policies.
+- Confirm the authoritative booking engine and update the booking adapter.
+- Replace room placeholders with approved, optimized property photography.
+- Reconstruct the logo from original straight-on sign photos; the included SVG is a provisional mark derived from the public exterior photo and documented colors.
+- Set `NEXT_PUBLIC_SITE_URL` to the custom production domain.
+- Confirm accessibility features at the property and update room data.
+- Test phone, email, directions, booking handoff, sitemap, canonical metadata, and mobile layouts.
+- Add the final domain in Vercel, configure apex/`www` redirects, and verify HTTPS.
+- Submit the sitemap to Google Search Console and update the Google Business Profile website URL.
 
-## Deploy on Vercel
+## Staging noindex
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel preview deployments should remain protected or receive an `X-Robots-Tag: noindex` header before sharing publicly. Production currently allows indexing through `src/app/robots.ts`.

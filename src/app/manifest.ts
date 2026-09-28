@@ -1,0 +1,1 @@
+import type { MetadataRoute } from "next";export default function manifest():MetadataRoute.Manifest{return{name:"Faulkton Inn",short_name:"Faulkton Inn",description:"Family-run hospitality in Faulkton, South Dakota",start_url:"/",display:"standalone",background_color:"#f2ede4",theme_color:"#111d2f"}}

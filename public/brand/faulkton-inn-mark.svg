@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" role="img" aria-labelledby="title desc">
+  <title id="title">Faulkton Inn</title><desc id="desc">Faulkton Inn wordmark in navy, cream, and rust.</desc>
+  <rect width="620" height="180" rx="6" fill="#111D2F"/>
+  <text x="42" y="118" fill="#F2EDE4" stroke="#875845" stroke-width="1" font-family="Georgia, serif" font-size="90" font-weight="700">Faulkton</text>
+  <ellipse cx="514" cy="91" rx="81" ry="48" fill="#875845"/>
+  <path d="M439 44c25 10 39 17 54 34M438 136c27-11 41-18 56-34M590 44c-25 10-39 17-54 34M590 136c-25-11-39-18-54-34" fill="none" stroke="#875845" stroke-width="8" stroke-linecap="round"/>
+  <text x="464" y="112" fill="#fff" font-family="Georgia, serif" font-size="63" font-weight="700">INN</text>
+</svg>
